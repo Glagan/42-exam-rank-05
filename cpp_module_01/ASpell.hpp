@@ -30,6 +30,8 @@ public:
 	ASpell(ASpell const &other);
 	virtual ~ASpell();
 
+	ASpell &operator=(ASpell const &other);
+
 	std::string const &getName(void) const;
 	std::string const &getEffects(void) const;
 
