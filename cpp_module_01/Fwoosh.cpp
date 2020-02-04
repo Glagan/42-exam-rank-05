@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:24:08 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/01/16 23:24:08 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 12:50:28 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@ Fwoosh::Fwoosh():
 	ASpell("Fwoosh", "fwooshed") {}
 
 Fwoosh::~Fwoosh() {}
-
-Fwoosh::Fwoosh(Fwoosh const &other):
-	ASpell(other) {}
-
-Fwoosh &Fwoosh::operator=(Fwoosh const &other)
-{
-	(void)other;
-	return (*this);
-}
 
 ASpell *Fwoosh::clone(void) const
 {

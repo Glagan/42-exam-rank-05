@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   ATarget.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 20:37:27 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:04:30 by ncolomer         ###   ########.fr       */
+/*   Created: 2020/01/16 23:06:18 by ncolomer          #+#    #+#             */
+/*   Updated: 2020/02/04 13:01:24 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WARLOCK_HPP
-# define WARLOCK_HPP
+#ifndef ATARGET_HPP
+# define ATARGET_HPP
 
 # include <iostream>
 # include <string>
 
-class Warlock
+class ASpell;
+
+class ATarget
 {
 private:
-	std::string name;
-	std::string title;
-
-	Warlock();
-	Warlock(Warlock const &other);
-
-	Warlock &operator=(Warlock const &other);
+	std::string type;
 public:
-	Warlock(std::string const &name, std::string const &title);
-	virtual ~Warlock();
+	ATarget();
+	ATarget(std::string const &type);
+	ATarget(ATarget const &other);
+	virtual ~ATarget();
 
-	std::string const &getName(void) const;
-	std::string const &getTitle(void) const;
+	ATarget &operator=(ATarget const &other);
 
-	void setTitle(std::string const &title);
+	std::string const &getType(void) const;
 
-	void introduce(void) const;
+	void getHitBySpell(ASpell const &spell) const;
+
+	virtual ATarget *clone(void) const = 0;
 };
+
+# include "ASpell.hpp"
 
 #endif

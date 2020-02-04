@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 20:37:13 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:12:27 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 12:58:05 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,38 +45,17 @@ void Warlock::introduce(void) const
 
 void Warlock::learnSpell(ASpell *spell)
 {
-	if (spell != nullptr)
-		this->spells.push_back(spell->clone());
+	this->spellBook.learnSpell(spell);
 }
 
 void Warlock::forgetSpell(std::string const &spellName)
 {
-	std::vector<ASpell*>::iterator it = this->spells.begin();
-	std::vector<ASpell*>::iterator ite = this->spells.end();
-
-	while (it != ite)
-	{
-		if ((*it)->getName() == spellName)
-		{
-			this->spells.erase(it);
-			return ;
-		}
-		++it;
-	}
+	this->spellBook.forgetSpell(spellName);
 }
 
 void Warlock::launchSpell(std::string const &spellName, ATarget const &target)
 {
-	std::vector<ASpell*>::iterator it = this->spells.begin();
-	std::vector<ASpell*>::iterator ite = this->spells.end();
-
-	while (it != ite)
-	{
-		if ((*it)->getName() == spellName)
-		{
-			(*it)->launch(target);
-			return ;
-		}
-		++it;
-	}
+	ASpell *spell = this->spellBook.generateSpell(spellName);
+	if (spell)
+		spell->launch(target);
 }

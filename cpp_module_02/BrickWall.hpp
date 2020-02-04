@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
+/*   BrickWall.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 23:06:34 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:02:24 by ncolomer         ###   ########.fr       */
+/*   Created: 2020/02/04 12:58:33 by ncolomer          #+#    #+#             */
+/*   Updated: 2020/02/04 12:59:02 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FWOOSH_HPP
-# define FWOOSH_HPP
+#ifndef BRICKWALL_HPP
+# define BRICKWALL_HPP
 
-# include "ASpell.hpp"
+# include "ATarget.hpp"
 
-class Fwoosh: public ASpell
+class BrickWall: public ATarget
 {
 public:
-	Fwoosh();
-	virtual ~Fwoosh();
+	BrickWall();
+	virtual ~BrickWall();
 
-	virtual ASpell *clone(void) const;
+	virtual ATarget *clone(void) const;
 };
 
 #endif

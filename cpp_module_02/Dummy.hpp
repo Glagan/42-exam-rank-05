@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
+/*   Dummy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 23:06:34 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:02:24 by ncolomer         ###   ########.fr       */
+/*   Created: 2020/01/16 23:06:26 by ncolomer          #+#    #+#             */
+/*   Updated: 2020/02/04 12:50:05 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FWOOSH_HPP
-# define FWOOSH_HPP
+#ifndef DUMMY_HPP
+# define DUMMY_HPP
 
-# include "ASpell.hpp"
+# include "ATarget.hpp"
 
-class Fwoosh: public ASpell
+class Dummy: public ATarget
 {
 public:
-	Fwoosh();
-	virtual ~Fwoosh();
+	Dummy();
+	virtual ~Dummy();
 
-	virtual ASpell *clone(void) const;
+	virtual ATarget *clone(void) const;
 };
 
 #endif

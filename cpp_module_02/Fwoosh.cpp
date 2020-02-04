@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
+/*   Fwoosh.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 23:06:34 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:02:24 by ncolomer         ###   ########.fr       */
+/*   Created: 2020/01/16 23:24:08 by ncolomer          #+#    #+#             */
+/*   Updated: 2020/02/04 13:02:04 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FWOOSH_HPP
-# define FWOOSH_HPP
+#include "Fwoosh.hpp"
 
-# include "ASpell.hpp"
+Fwoosh::Fwoosh():
+	ASpell("Fwoosh", "fwooshed") {}
 
-class Fwoosh: public ASpell
+Fwoosh::~Fwoosh() {}
+
+ASpell *Fwoosh::clone(void) const
 {
-public:
-	Fwoosh();
-	virtual ~Fwoosh();
-
-	virtual ASpell *clone(void) const;
-};
-
-#endif
+	return (new Fwoosh());
+}

@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:06:18 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/01/16 23:06:18 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 13:02:41 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class ATarget
 {
 private:
 	std::string type;
-	ATarget();
 public:
+	ATarget();
 	ATarget(std::string const &type);
 	ATarget(ATarget const &other);
 	virtual ~ATarget();

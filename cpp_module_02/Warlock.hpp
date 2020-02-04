@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 20:37:27 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:04:30 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 13:00:44 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 
 # include <iostream>
 # include <string>
+# include <vector>
+# include "ASpell.hpp"
+# include "ATarget.hpp"
+# include "SpellBook.hpp"
 
 class Warlock
 {
 private:
 	std::string name;
 	std::string title;
+	SpellBook spellBook;
 
 	Warlock();
 	Warlock(Warlock const &other);
@@ -36,6 +41,10 @@ public:
 	void setTitle(std::string const &title);
 
 	void introduce(void) const;
+
+	void learnSpell(ASpell *spell);
+	void forgetSpell(std::string const &spellName);
+	void launchSpell(std::string const &spellName, ATarget const &target);
 };
 
 #endif

@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   ASpell.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 20:37:27 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:04:30 by ncolomer         ###   ########.fr       */
+/*   Created: 2020/01/16 23:06:00 by ncolomer          #+#    #+#             */
+/*   Updated: 2020/02/04 13:01:28 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WARLOCK_HPP
-# define WARLOCK_HPP
+#ifndef ASPELL_HPP
+# define ASPELL_HPP
 
 # include <iostream>
 # include <string>
 
-class Warlock
+class ATarget;
+
+class ASpell
 {
 private:
 	std::string name;
-	std::string title;
-
-	Warlock();
-	Warlock(Warlock const &other);
-
-	Warlock &operator=(Warlock const &other);
+	std::string effects;
 public:
-	Warlock(std::string const &name, std::string const &title);
-	virtual ~Warlock();
+	ASpell();
+	ASpell(std::string const &name, std::string const &effects);
+	ASpell(ASpell const &other);
+	virtual ~ASpell();
+
+	ASpell &operator=(ASpell const &other);
 
 	std::string const &getName(void) const;
-	std::string const &getTitle(void) const;
+	std::string const &getEffects(void) const;
 
-	void setTitle(std::string const &title);
+	void launch(ATarget const &target);
 
-	void introduce(void) const;
+	virtual ASpell *clone(void) const = 0;
 };
+
+# include "ATarget.hpp"
 
 #endif

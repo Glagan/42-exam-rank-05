@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:16:30 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/01/16 23:16:30 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 12:50:15 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@ Dummy::Dummy():
 	ATarget("Dummy Practice") {}
 
 Dummy::~Dummy() {}
-
-Dummy::Dummy(Dummy const &other):
-	ATarget(other) {}
-
-Dummy &Dummy::operator=(Dummy const &other)
-{
-	(void)other;
-	return (*this);
-}
 
 ATarget *Dummy::clone(void) const
 {

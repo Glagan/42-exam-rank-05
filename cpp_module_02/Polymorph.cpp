@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
+/*   Polymorph.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 23:06:34 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:02:24 by ncolomer         ###   ########.fr       */
+/*   Created: 2020/02/04 12:49:28 by ncolomer          #+#    #+#             */
+/*   Updated: 2020/02/04 13:02:19 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FWOOSH_HPP
-# define FWOOSH_HPP
+#include "Polymorph.hpp"
 
-# include "ASpell.hpp"
+Polymorph::Polymorph():
+	ASpell("Polymorph", "turned to a sheep") {}
 
-class Fwoosh: public ASpell
+Polymorph::~Polymorph() {}
+
+ASpell *Polymorph::clone(void) const
 {
-public:
-	Fwoosh();
-	virtual ~Fwoosh();
-
-	virtual ASpell *clone(void) const;
-};
-
-#endif
+	return (new Polymorph());
+}

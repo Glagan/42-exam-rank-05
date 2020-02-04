@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:05:57 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:03:58 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 13:01:42 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string const &ASpell::getEffects(void) const
 	return (this->effects);
 }
 
-void ASpell::launch(ATarget const &target) const
+void ASpell::launch(ATarget const &target)
 {
 	target.getHitBySpell(*this);
 }

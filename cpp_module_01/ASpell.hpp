@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:06:00 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/01/16 23:06:00 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 13:03:02 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ class ASpell
 private:
 	std::string name;
 	std::string effects;
-
-	ASpell();
 public:
+	ASpell();
 	ASpell(std::string const &name, std::string const &effects);
 	ASpell(ASpell const &other);
 	virtual ~ASpell();

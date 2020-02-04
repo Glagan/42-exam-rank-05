@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 20:37:27 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/01/16 20:37:27 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 13:02:29 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ private:
 	Warlock &operator=(Warlock const &other);
 public:
 	Warlock(std::string const &name, std::string const &title);
-	~Warlock();
+	virtual ~Warlock();
 
 	std::string const &getName(void) const;
 	std::string const &getTitle(void) const;

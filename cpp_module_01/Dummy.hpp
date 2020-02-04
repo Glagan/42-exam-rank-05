@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:06:26 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/01/16 23:06:26 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/04 12:50:12 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ class Dummy: public ATarget
 {
 public:
 	Dummy();
-	Dummy(Dummy const &other);
 	virtual ~Dummy();
-
-	Dummy &operator=(Dummy const &other);
 
 	virtual ATarget *clone(void) const;
 };
