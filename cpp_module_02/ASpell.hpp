@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:06:00 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:01:28 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/11 11:41:51 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ATarget;
 
 class ASpell
 {
-private:
+protected:
 	std::string name;
 	std::string effects;
 public:

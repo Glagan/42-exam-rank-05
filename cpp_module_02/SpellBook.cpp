@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 12:54:32 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:12:07 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:39:09 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,39 @@
 
 SpellBook::SpellBook() {}
 
-SpellBook::~SpellBook() {}
-
-void SpellBook::learnSpell(ASpell *spell)
-{
-	if (!spell || spell->getName() == "")
-		return ;
-
-	std::vector<ASpell*>::iterator it = this->spells.begin();
+SpellBook::~SpellBook() {
 	std::vector<ASpell*>::iterator ite = this->spells.end();
-
-	while (it != ite)
-	{
-		if ((*it)->getName() == spell->getName())
-			return ;
-		++it;
-	}
-	this->spells.push_back(spell->clone());
+	for (std::vector<ASpell*>::iterator it = this->spells.begin(); it != ite; ++it)
+		delete *it;
+	this->spells.clear();
 }
 
-void SpellBook::forgetSpell(std::string const &spellName)
-{
-	std::vector<ASpell*>::iterator it = this->spells.begin();
-	std::vector<ASpell*>::iterator ite = this->spells.end();
+void SpellBook::learnSpell(ASpell *spell) {
+	if (spell) {
+		std::vector<ASpell*>::iterator ite = this->spells.end();
+		for (std::vector<ASpell*>::iterator it = this->spells.begin(); it != ite; ++it)
+			if ((*it)->getName() == spell->getName())
+				return ;
+		this->spells.push_back(spell->clone());
+	}
+}
 
-	while (it != ite)
-	{
-		if ((*it)->getName() == spellName)
-		{
-			this->spells.erase(it);
-			return ;
+void SpellBook::forgetSpell(std::string const &spellName) {
+	std::vector<ASpell*>::iterator ite = this->spells.end();
+	for (std::vector<ASpell*>::iterator it = this->spells.begin(); it != ite; ++it) {
+		if ((*it)->getName() == spellName) {
+			delete *it;
+			it = this->spells.erase(it);
 		}
-		++it;
 	}
 }
 
-ASpell *SpellBook::generateSpell(std::string const &spellName)
-{
-	std::vector<ASpell*>::iterator it = this->spells.begin();
+ASpell *SpellBook::generateSpell(std::string const &spellName) {
 	std::vector<ASpell*>::iterator ite = this->spells.end();
-
-	while (it != ite)
-	{
-		if ((*it)->getName() == spellName)
+	for (std::vector<ASpell*>::iterator it = this->spells.begin(); it != ite; ++it) {
+		if ((*it)->getName() == spellName) {
 			return (*it);
-		++it;
+		}
 	}
 	return (nullptr);
 }

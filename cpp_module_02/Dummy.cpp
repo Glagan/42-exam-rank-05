@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 23:16:30 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:02:08 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:40:09 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Dummy::Dummy():
 
 Dummy::~Dummy() {}
 
-ATarget *Dummy::clone(void) const
-{
-	return (new Dummy());
+ATarget *Dummy::clone(void) const {
+	return (new Dummy(*this));
 }

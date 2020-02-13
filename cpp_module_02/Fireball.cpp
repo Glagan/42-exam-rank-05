@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 12:49:03 by ncolomer          #+#    #+#             */
-/*   Updated: 2020/02/04 13:02:13 by ncolomer         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:40:00 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Fireball::Fireball():
 
 Fireball::~Fireball() {}
 
-ASpell *Fireball::clone(void) const
-{
-	return (new Fireball());
+ASpell *Fireball::clone(void) const {
+	return (new Fireball(*this));
 }
